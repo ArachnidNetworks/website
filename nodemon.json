@@ -1,0 +1,4 @@
+{
+  "watch": [ "build.js", "views/", "static/" ],
+  "ext": "*"
+}

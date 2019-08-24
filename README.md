@@ -1,5 +1,5 @@
 # Arachnid Website
 
-`npm start` to start. `npm run dev` to develop.
+`npm build` to build. `npm run dev` to develop. Build output goes to `.out/`.
 
 *README coming soon...*
