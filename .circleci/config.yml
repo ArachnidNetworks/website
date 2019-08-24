@@ -29,3 +29,7 @@ jobs:
       - run:
           name: 'Build Static HTML'
           command: 'npm run build'
+
+    branches:
+      only:
+        - master
