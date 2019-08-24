@@ -171,8 +171,8 @@ a:hover {
 }
 
 .super-spacy {
-  padding-top: 200px;
-  padding-bottom: 200px;
+  padding-top: 164px;
+  padding-bottom: 164px;
 }
 
 .kinda-spacy {
@@ -181,11 +181,11 @@ a:hover {
 }
 
 .t-spacy {
-  padding-top: 128px;
+  padding-top: 64px;
 }
 
 .b-spacy {
-  padding-bottom: 128px;
+  padding-bottom: 64px;
 }
 
 .bold {
