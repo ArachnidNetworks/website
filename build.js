@@ -6,8 +6,9 @@ const pagesDir = 'views/pages/'
 const outDir = '.out/'
 
 const pages = [
-  [ '/index.ejs', '/'           ],
-  [ '/faq.ejs',   '/faq', 'FAQ' ]
+  // Path, canonical, name
+  [ '/index', '/'           ],
+  [ '/faq',   '/faq', 'FAQ' ]
 ]
 
 console.log('> Cleaning up...')
@@ -18,15 +19,17 @@ fs.copySync(staticDir, outDir)
 
 console.log('> Building pages...')
 for (let page of pages) {
-  const path = `${pagesDir}${page[0]}`
-  const raw = fs.readFileSync(path).toString()
+  const inPath = `${pagesDir}/${page[0]}.ejs`
+  const outPath = `${outDir}/${page[0]}.html`
 
+  const raw = fs.readFileSync(inPath).toString()
   const rendered = ejs.render(raw, {
-    url: page[1],
-    page: page[2]
-  }, { filename: path })
-  fs.ensureFileSync(`${outDir}/${page[1]}.html`)
-  fs.writeFileSync(`${outDir}/${page[1]}.html`, rendered)
+    canonical: page[1],
+    name: page[2]
+  }, { filename: inPath })
+
+  fs.ensureFileSync(outPath)
+  fs.writeFileSync(outPath, rendered)
 }
 
 console.log('> Build completed!')

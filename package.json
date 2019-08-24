@@ -5,7 +5,8 @@
   "main": "build.js",
   "scripts": {
     "build": "node build.js",
-    "dev": "nodemon build.js "
+    "watch": "nodemon build.js",
+    "serve": "serve .out/"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +16,7 @@
     "ejs": "^2.6.2"
   },
   "devDependencies": {
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.1",
+    "serve": "^11.1.0"
   }
 }
