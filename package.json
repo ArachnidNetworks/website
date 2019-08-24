@@ -6,7 +6,7 @@
   "scripts": {
     "build": "node build.js",
     "watch": "nodemon build.js",
-    "serve": "serve .out/"
+    "serve": "superstatic .out/"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +17,6 @@
   },
   "devDependencies": {
     "nodemon": "^1.19.1",
-    "serve": "^11.1.0"
+    "superstatic": "^6.0.4"
   }
 }
