@@ -4,19 +4,17 @@ const app = express()
 app.use('/', express.static('static/'))
 
 app.set('view engine', 'ejs')
-
-app.get('/', (req, res) => {
-  res.render('pages/index', {
-    url: req.url
+const defineRoute = (url, name) => {
+  app.get(url, (req, res) => {
+    res.render(`pages${url}`, {
+      url: req.url,
+      page: name
+    })
   })
-})
+}
 
-app.get('/faq', (req, res) => {
-  res.render('pages/faq', {
-    page: 'FAQ',
-    url: req.url
-  })
-})
+defineRoute('/')
+defineRoute('/faq', 'FAQ')
 
 const port = parseInt(process.env.PORT) || 8080
 app.listen(port)
