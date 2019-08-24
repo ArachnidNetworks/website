@@ -1,0 +1,31 @@
+version: 2
+
+jobs:
+  build:
+    working_directory: ~/mern-starter
+
+    docker:
+      - image: circleci/node:12
+
+    steps:
+      - checkout
+
+      - run:
+          name: 'Update NPM'
+          command: 'sudo npm install -g npm@latest'
+
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+
+      - run:
+          name: 'Install packages'
+          command: 'npm ci'
+
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+
+      - run:
+          name: 'Build static HTML'
+          command: 'npm run build'
