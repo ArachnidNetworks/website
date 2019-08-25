@@ -30,6 +30,9 @@ jobs:
           name: 'Build Static HTML'
           command: 'npm run build'
 
+      - store_artifacts:
+          path: .out/
+
     branches:
       only:
         - master
