@@ -36,8 +36,8 @@ jobs:
 
       - store_artifacts:
           path: out.tar.gz
-          destination: /
-
+          destination: out.tar.gz
+          
     branches:
       only:
         - master
