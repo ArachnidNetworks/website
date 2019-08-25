@@ -30,9 +30,13 @@ jobs:
           name: 'Build Static HTML'
           command: 'npm run build'
 
+      - run:
+          name: 'Compress Build Output'
+          command: 'tar -zcvf out.tar.gz .out/'
+
       - store_artifacts:
-          path: .out/
-          destination: /out
+          path: out.tar.gz
+          destination: /
 
     branches:
       only:
