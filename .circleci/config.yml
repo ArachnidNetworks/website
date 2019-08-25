@@ -32,12 +32,12 @@ jobs:
 
       - run:
           name: 'Compress Build Output'
-          command: 'tar -zcvf out.tar.gz .out/'
+          command: 'tar -zcvf out.tar.gz -C .out/ ./'
 
       - store_artifacts:
           path: out.tar.gz
           destination: out.tar.gz
-          
+
     branches:
       only:
         - master
