@@ -2,7 +2,7 @@ version: 2
 
 jobs:
   build:
-    working_directory: ~/mern-starter
+    working_directory: ~/arachnid-website
 
     docker:
       - image: circleci/node:12
@@ -32,7 +32,7 @@ jobs:
 
       - store_artifacts:
           path: .out/
-          destination: /
+          destination: /out
 
     branches:
       only:
